@@ -19,7 +19,10 @@ window.addEventListener('wheel', (e) => {
     // website page should not move
     e.preventDefault();
 
-    sliderTop += e.deltaY
+    const scrollDirection = e.deltaY > 0 ? 1 : -1
+
+    sliderTop += scrollDirection * 25
+    // sliderTop += e.deltaY
 
     const maxTop = trackHeight - sliderHeight
 
