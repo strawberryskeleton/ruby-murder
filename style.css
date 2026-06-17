@@ -1,0 +1,11 @@
+:root {
+    --black:#333;
+    --red: rgb(241, 32, 32);
+    --white: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
