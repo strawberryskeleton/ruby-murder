@@ -9,8 +9,10 @@ let sliderTop = 0
 let targetTop = 200
 
 const trackHeight = track.clientHeight
+const trackWidth = track.clientWidth
 const sliderHeight = slider.clientHeight
 const targetHeight = target.clientHeight
+const targetWidth = target.clientWidth
 
 //  SCROLL SLIDER
 window.addEventListener('wheel', (e) => {
@@ -56,6 +58,14 @@ function checkCollision () {
     }
 }
 
+//  MOVE TARGET TO NEW LOCATION
 function moveTargetRandomly () {
-    
+    const maxTargetTop = trackHeight - targetHeight
+    const maxTargetLeft = trackWidth - targetWidth
+
+    targetTop = Math.floor(Math.random() * maxTargetTop)
+    targetLeft = Math.floor(Math.random() * maxTargetLeft)
+
+    target.style.top = targetTop + 'px'
+    target.style.left = targetLeft + 'px'
 }
