@@ -2,11 +2,16 @@
 const slider = document.getElementById('slider')
 const target = document.getElementById('target')
 const scoreDisplay = document.getElementById('score')
+const timerDisplay = document.getElementById('timer')
 const track = document.getElementById('game-track')
 
 let score = 0
 let sliderTop = 0
 let targetTop = 200
+
+let timeLeft = 10
+let gameActive = true
+let gameInterval = null
 
 const trackHeight = track.clientHeight
 const trackWidth = track.clientWidth
@@ -17,10 +22,11 @@ const targetWidth = target.clientWidth
 //  SCROLL SLIDER
 window.addEventListener('wheel', (e) => {
     // website page should not move
-    e.preventDefault();
+    e.preventDefault()
+
+    if (!gameActive) return
 
     const scrollDirection = e.deltaY > 0 ? 1 : -1
-
     sliderTop += scrollDirection * 25
     // sliderTop += e.deltaY
 
@@ -72,3 +78,24 @@ function moveTargetRandomly () {
     target.style.top = targetTop + 'px'
     target.style.left = targetLeft + 'px'
 }
+
+//  SETTING GAME TIMER
+function startTimer () {
+    gameInterval = setInterval(() => {
+        timeLeft--
+        timerDisplay.innerText = timeLeft
+
+        if (timeLeft <= 0) {
+            endGame()
+        }
+    }, 1000)
+}
+
+function endGame () {
+    gameActive = false
+    clearInterval(gameInterval)
+
+    alert(`Game Over! You scored ${score} in 60 seconds!`)
+}
+
+startTimer()

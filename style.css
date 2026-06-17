@@ -21,16 +21,20 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#score-board {
+#game-stats {
     width: 100%;
     height: 10%;
     background-color: var(--red);
     text-align: right;
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: right;
+}
+
+#game-stats div {
+    margin-right: 1.5rem;
 }
 
 #game-track {
