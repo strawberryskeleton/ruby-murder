@@ -15,7 +15,7 @@ const finalScoreText = document.getElementById('final-score')
 let score = 0
 let sliderTop = 0
 let targetTop = 200
-let timeLeft = 10
+let timeLeft = 60
 let gameActive = false
 let gameInterval = null
 
@@ -37,7 +37,7 @@ restartBtn.addEventListener('click', () => {
     endScreen.classList.add('hidden')
 
     score = 0
-    timeLeft = 10
+    timeLeft = 60
     sliderTop = 0
 
     scoreDisplay.innerText = score

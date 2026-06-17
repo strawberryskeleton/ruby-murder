@@ -1,9 +1,11 @@
 :root {
-    --black:#333;
-    --red: rgb(204, 41, 41);
-    --red-accent: rgb(175, 3, 3);
+    --black:#222;
+    --black-accent: #000;
+    --red: #c5100d;
+    /* --red: rgb(219, 21, 21); */
+    --red-accent: rgb(177, 11, 11);
     --white: #ddd;
-    --transparent-overlay: rgba(0, 0, 0, 0.6);
+    --transparent-overlay: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -25,7 +27,7 @@ body {
 
 #game-stats {
     width: 100%;
-    height: 10%;
+    height: 5%;
     background-color: var(--red);
     text-align: right;
     /* padding: 1.5rem; */
@@ -42,34 +44,48 @@ body {
 #game-container {
     position: relative;
     width: 100%;
-    height: 90%;
+    height: 95%;
     display: flex;
     justify-content: center;
+    background-image: url(./assets/bg2.jpeg);
 }
 
 #game-track {
     width: 100%;
     height: 100%;
-    background-color:bisque;
+    /* background-color:bisque; */
     position: relative;
     overflow: hidden;
 }
 
 #slider {
     width: 100%;
-    height: 10px;
-    background-color: blueviolet;
+    height: 6px;
+    border-top: dashed var(--red-accent) 6px;
+    /* background-color: var(--red-accent); */
     position: absolute;
     top: 100px;     /* change with js */
 }
 
+#slider img {
+    z-index: 10;
+    height: 150px;
+    position: relative;
+    top: -35px;
+    /* transform: translate(-50%); */
+}
+
 #target {
-    width: 50px;
-    height: 50px;
-    background-color: cadetblue;
+    width: 60px;
+    height: 60px;
+    /* background-color: cadetblue; */
     position: absolute;
     top: 200px;
     left: 500px;
+}
+
+#target img {
+    height: 110%;
 }
 
 #start-screen {
@@ -88,13 +104,15 @@ body {
     z-index: 10;
 }
 
-#start-screen h2 {
-    margin: 25px;
+#start-screen img {
+    /* margin: 10px; */
+    height: 400px;
 }
 
 #start-screen p {
     font-size: 18px;
     line-height: 1.5;
+    margin-top: -55px;
     margin-bottom: 25px;
 }
 
@@ -107,6 +125,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color ease-in 0.25s;
 }
 
 .btn:hover {
@@ -133,13 +152,18 @@ body {
 }
 
 #end-screen h2 {
-    font-size: 48px;
+    font-size: 65px;
     margin-bottom: 10px;
-    color: var(--white);
+    color: var(--red-accent);
+    -webkit-text-stroke: 2px var(--red);
+}
+
+#end-screen p {
+    font-size: 22px;
 }
 
 #final-score-display {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     margin: 15px 0 20px 0;
     color: var(--white);
