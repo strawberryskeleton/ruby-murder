@@ -10,7 +10,9 @@ let targetTop = 200
 
 const trackHeight = track.clientHeight
 const sliderHeight = slider.clientHeight
+const targetHeight = target.clientHeight
 
+//  SCROLL SLIDER
 window.addEventListener('wheel', (e) => {
     // website page should not move
     e.preventDefault();
@@ -29,4 +31,31 @@ window.addEventListener('wheel', (e) => {
 
     slider.style.top = sliderTop + 'px'
 
+    checkCollision()
+
 }, {passive: false})
+
+//  COLLISION DETECTION
+function checkCollision () {
+    const sliderBottom = sliderTop + sliderHeight
+    const targetBottom = targetTop + targetHeight
+
+    const isOverlapping = sliderTop < targetBottom && sliderBottom > targetTop
+
+    // if (sliderTop < targetBottom && sliderBottom > targetTop) {
+
+    // }
+
+    if (isOverlapping) {
+        score++
+        scoreDisplay.innerText = score
+        console.log(score)
+        // setInterval(1000)
+
+        moveTargetRandomly()
+    }
+}
+
+function moveTargetRandomly () {
+    
+}
