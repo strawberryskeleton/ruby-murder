@@ -4,13 +4,15 @@ const target = document.getElementById('target')
 const scoreDisplay = document.getElementById('score')
 const timerDisplay = document.getElementById('timer')
 const track = document.getElementById('game-track')
+const startScreen = document.getElementById('start-screen')
+const startBtn = document.getElementById('start-btn')
 
 let score = 0
 let sliderTop = 0
 let targetTop = 200
 
-let timeLeft = 1000
-let gameActive = true
+let timeLeft = 10
+let gameActive = false
 let gameInterval = null
 
 const trackHeight = track.clientHeight
@@ -18,6 +20,14 @@ const trackWidth = track.clientWidth
 const sliderHeight = slider.clientHeight
 const targetHeight = target.clientHeight
 const targetWidth = target.clientWidth
+
+startBtn.addEventListener('click', () => {
+    startScreen.classList.add('hidden')
+
+    gameActive = true
+
+    startTimer()
+})
 
 //  SCROLL SLIDER
 window.addEventListener('wheel', (e) => {
