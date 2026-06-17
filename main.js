@@ -9,7 +9,7 @@ let score = 0
 let sliderTop = 0
 let targetTop = 200
 
-let timeLeft = 10
+let timeLeft = 1000
 let gameActive = true
 let gameInterval = null
 
@@ -97,5 +97,3 @@ function endGame () {
 
     alert(`Game Over! You scored ${score} in 60 seconds!`)
 }
-
-startTimer()
