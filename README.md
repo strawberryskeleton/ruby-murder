@@ -7,6 +7,8 @@ scroll scroll to get ruby, but you are a crow.
 
 **Controls**: scroll using your mouse wheel / from trackpad / from scroll knob (whichever way you scroll on your device noramlly)
 
+**Play Here**: [https://strawberryskeleton.github.io/ruby-murder/](https://strawberryskeleton.github.io/ruby-murder/)
+
 ## Features
 - custom logo
 - start and end/restart screen
